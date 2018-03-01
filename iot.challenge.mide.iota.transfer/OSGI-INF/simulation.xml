@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component
+	xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	activate="activate"
+	deactivate="deactivate"
+	modified="updated"
+	name="iot.challenge.mide.iota.transfer.efficiency">
+
+	<implementation class="iot.challenge.mide.iota.transfer.IOTATransferEfficiencyService"/>
+
+	<service>
+		<provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+	</service>
+
+	<property
+		name="service.pid"
+		value="iot.challenge.mide.iota.transfer.efficiency"/>
+
+	<reference
+		name="ConfigurationService"
+		policy="static"
+		bind="setConfigurationService"
+		unbind="unsetConfigurationService"
+		cardinality="1..1"
+		interface="org.eclipse.kura.configuration.ConfigurationService"/>
+
+</scr:component>
