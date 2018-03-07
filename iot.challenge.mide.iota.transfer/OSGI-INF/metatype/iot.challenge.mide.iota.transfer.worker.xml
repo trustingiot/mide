@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="iot.challenge.mide.iota.transfer.worker" name="IOTA worker"
+		description="IOTA worker">
+
+		<Icon resource="resources/icons/mide.png" size="32" />
+
+		<AD id="id"
+			name="id"
+			type="String"
+			cardinality="0"
+			required="true"
+			default="worker"
+			description="Worker id"/>
+
+		<AD id="iota.wallet.seed"
+			name="IOTA Wallet seed"
+			type="String"
+			cardinality="0"
+			required="true"
+			default="IHDEENZYITYVYSPKAURUZAQKGVJEREFDJMYTANNXXGPZ9GJWTEOJJ9IPMXOGZNQLSNMFDSQOTZAEFTUEB"
+			description="Seed for the generation of the IOTA wallet"/>
+
+	</OCD>
+
+	<Designate pid="iot.challenge.mide.iota.transfer.worker">
+		<Object ocdref="iot.challenge.mide.iota.transfer.worker"/>
+	</Designate>
+</MetaData>

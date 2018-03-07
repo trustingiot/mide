@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component
+	xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	activate="activate"
+	deactivate="deactivate"
+	modified="updated"
+	name="iot.challenge.mide.iota.transfer.worker">
+
+	<implementation class="iot.challenge.mide.iota.transfer.worker.Worker"/>
+
+	<service>
+		<provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+	</service>
+
+	<property
+		name="service.pid"
+		value="iot.challenge.mide.iota.transfer.worker"/>
+
+	<reference
+		name="CloudPayloadProtoBufDecoder"
+		interface="org.eclipse.kura.cloud.CloudPayloadProtoBufDecoder"
+		cardinality="1..1"
+		bind="setCloudPayloadProtoBufDecoder"
+		unbind="unsetCloudPayloadProtoBufDecoder"/>
+
+	<reference
+		name="CloudPayloadProtoBufEncoder"
+		interface="org.eclipse.kura.cloud.CloudPayloadProtoBufEncoder"
+		cardinality="1..1"
+		bind="setCloudPayloadProtoBufEncoder"
+		unbind="unsetCloudPayloadProtoBufEncoder"/>
+
+	<reference
+		name="DataService"
+		interface="org.eclipse.kura.data.DataService"
+		cardinality="1..1"
+		bind="setDataService"
+		unbind="unsetDataService"/>
+
+</scr:component>
