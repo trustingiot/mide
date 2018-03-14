@@ -6,4 +6,5 @@
 
 ## Features
 
-* **iota.transfer**: Kura's package to test the efficiency of a device making transactions to the IOTA's tangle.
+* **iota.transfer**: Kura package to test the efficiency of a device making transactions to the IOTA's tangle.
+* **location.accuracy**: Java project to measure the accuracy of the IPS.
